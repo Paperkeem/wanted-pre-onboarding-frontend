@@ -31,8 +31,7 @@ export default function Todo() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.replace('http://localhost:3000/')
-  }
+    navigate('/');
   
   const handleChangeInput = (e) => {
     setTodo(e.target.value);
