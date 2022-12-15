@@ -3,7 +3,8 @@
 # 1. 배포 링크
 ## 배포 사이트
 📌 https://neon-sfogliatella-4c5119.netlify.app/
-## 블로그 참가 
+<br/>
+## 블로그 참가 에세이
 📌 https://velog.io/@paperkeem/원티드-프리온보딩-프론트엔드-인턴십-참가-에세이-김종이
 <br/><br/>
 # 2. 기능 시연 GIF
