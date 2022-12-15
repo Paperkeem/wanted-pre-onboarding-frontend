@@ -1,7 +1,10 @@
 # 원티드 프리온보딩 프론트엔드 코스
 
 # 1. 배포 링크
+## 배포 사이트
 📌 https://neon-sfogliatella-4c5119.netlify.app/
+## 블로그 참가 
+📌 https://velog.io/@paperkeem/원티드-프리온보딩-프론트엔드-인턴십-참가-에세이-김종이
 <br/><br/>
 # 2. 기능 시연 GIF
 <img width="60%" src="https://user-images.githubusercontent.com/107424974/207606625-cbac3242-3503-47ed-ada8-e14a9470c3e7.gif"/>
