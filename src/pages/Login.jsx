@@ -25,7 +25,7 @@ export default function Login() {
     setInfo({ ...info, password: e.target.value });
   }
 
-  const handleSingUp = (e) => {
+  const handleSingUp = async (e) => {
     if (!isok.isemail) {
       alert('이메일 형식을 지켜주세요');
       return
@@ -36,7 +36,7 @@ export default function Login() {
       return
     }
 
-    axios.post("https://pre-onboarding-selection-task.shop/auth/signup",
+    const res = await axios.post("https://pre-onboarding-selection-task.shop/auth/signup",
       {
         email: info.email,
         password: info.password,
@@ -53,8 +53,8 @@ export default function Login() {
       });
   }
 
-  const handleSingIn = () => {
-    axios.post("https://pre-onboarding-selection-task.shop/auth/signin",
+  const handleSingIn = async () => {
+    const res = await axios.post("https://pre-onboarding-selection-task.shop/auth/signin",
       {
         email: info.email,
         password: info.password,

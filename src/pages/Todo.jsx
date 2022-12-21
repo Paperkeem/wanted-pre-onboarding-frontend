@@ -16,8 +16,9 @@ export default function Todo() {
   }, [navigate]);
 
   useEffect(() => {
-    var token = JSON.parse(localStorage.getItem("token"));
-    axios.get("https://pre-onboarding-selection-task.shop/todos",
+    async function getList() {
+      var token = JSON.parse(localStorage.getItem("token"));
+      const res = axios.get("https://pre-onboarding-selection-task.shop/todos",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -27,6 +28,8 @@ export default function Todo() {
         // console.log('response:', res);
         setTodoList(res.data);
       });
+    }
+    getList();
   }, [todoList]);
 
   const handleLogout = () => {
@@ -38,9 +41,9 @@ export default function Todo() {
     setTodo(e.target.value);
   }
 
-  const handleAddtodo = () => {
+  const handleAddtodo = async () => {
     var token = JSON.parse(localStorage.getItem("token"));
-    axios.post("https://pre-onboarding-selection-task.shop/todos",
+    const res = await axios.post("https://pre-onboarding-selection-task.shop/todos",
       {
         todo: todo,
       },

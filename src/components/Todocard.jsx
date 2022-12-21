@@ -13,9 +13,9 @@ export default function Todocard({item}) {
     updateData(todo, newtodo.isCompleted);
   }
 
-  const updateData = (newTodo, changeCompleted) => {
+  const updateData = async (newTodo, changeCompleted) => {
     var token = JSON.parse(localStorage.getItem("token"));
-    axios.put(`https://pre-onboarding-selection-task.shop/todos/${id}`,
+    const res = await axios.put(`https://pre-onboarding-selection-task.shop/todos/${id}`,
       {
         todo: (newTodo || todo),
         isCompleted: (changeCompleted || isCompleted),
@@ -31,9 +31,9 @@ export default function Todocard({item}) {
       });
   }
 
-  const handleDlete = () => {
+  const handleDlete = async () => {
     var token = JSON.parse(localStorage.getItem("token"));
-    axios.delete(`https://pre-onboarding-selection-task.shop/todos/${id}`,
+    const res = await axios.delete(`https://pre-onboarding-selection-task.shop/todos/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
