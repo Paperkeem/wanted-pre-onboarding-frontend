@@ -152,3 +152,7 @@
 .fade{
   display: none;
 }
+
+.add{
+  display: block;
+}
