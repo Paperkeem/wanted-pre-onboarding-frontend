@@ -36,7 +36,8 @@ Axios , react-router-dom , tailwind
 
 
 ```javascript
-const updateTodoHandler = useCallback(
+
+  const updateTodoHandler = useCallback(
     async (content, e) => {
       try {
         e && e.preventDefault();
