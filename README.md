@@ -35,12 +35,13 @@
 Axios , react-router-dom , tailwind
 
 
+​ 모듈화 된 axios 코드 호출하여 request
 ```javascript
 
   const updateTodoHandler = useCallback(
     async (content, e) => {
       try {
-        e && e.preventDefault();
+        e ?. e.preventDefault();
         const editFormData = {
           todo: content.todo,
           isCompleted: content.isCompleted,
@@ -53,16 +54,6 @@ Axios , react-router-dom , tailwind
     },
     [id, syncData]
   );
-
-  const onSubmitContent = e => {
-    updateTodoHandler(content, e);
-    setIsEdit(false);
-  };
-
-  const onCheckClick = () => {
-    setContent({ ...content, isCompleted: !isCompleted });
-    updateTodoHandler({ ...content, isCompleted: !isCompleted });
-  };
 ```
 
 ```javascript
