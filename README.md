@@ -33,3 +33,44 @@
 <br/><br/>
 # 4. 사용 라이브러리
 Axios , react-router-dom , tailwind
+
+
+```
+const updateTodoHandler = useCallback(
+    async (content, e) => {
+      try {
+        e && e.preventDefault();
+        const editFormData = {
+          todo: content.todo,
+          isCompleted: content.isCompleted,
+        };
+        await todoAPI.updateTodo(id, editFormData);
+        syncData();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    [id, syncData]
+  );
+
+  const onSubmitContent = e => {
+    updateTodoHandler(content, e);
+    setIsEdit(false);
+  };
+
+  const onCheckClick = () => {
+    setContent({ ...content, isCompleted: !isCompleted });
+    updateTodoHandler({ ...content, isCompleted: !isCompleted });
+  };
+```
+
+```
+  const deleteTodoHandler = useCallback(async () => {
+    try {
+      await todoAPI.deleteTodo(id);
+      syncData();
+    } catch (error) {
+      console.error(error);
+    }
+  }, [id, syncData]);
+```
