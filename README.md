@@ -35,7 +35,7 @@
 Axios , react-router-dom , tailwind
 
 
-```
+```javascript
 const updateTodoHandler = useCallback(
     async (content, e) => {
       try {
@@ -64,7 +64,7 @@ const updateTodoHandler = useCallback(
   };
 ```
 
-```
+```javascript
   const deleteTodoHandler = useCallback(async () => {
     try {
       await todoAPI.deleteTodo(id);
