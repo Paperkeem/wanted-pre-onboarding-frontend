@@ -33,36 +33,3 @@
 <br/><br/>
 # 4. 사용 라이브러리
 Axios , react-router-dom , tailwind
-
-
-​ 모듈화 된 axios 코드 호출하여 request
-```javascript
-
-  const updateTodoHandler = useCallback(
-    async (content, e) => {
-      try {
-        e ?. e.preventDefault();
-        const editFormData = {
-          todo: content.todo,
-          isCompleted: content.isCompleted,
-        };
-        await todoAPI.updateTodo(id, editFormData);
-        syncData();
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    [id, syncData]
-  );
-```
-
-```javascript
-  const deleteTodoHandler = useCallback(async () => {
-    try {
-      await todoAPI.deleteTodo(id);
-      syncData();
-    } catch (error) {
-      console.error(error);
-    }
-  }, [id, syncData]);
-```
