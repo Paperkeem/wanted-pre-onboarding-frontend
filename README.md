@@ -32,4 +32,7 @@
 ### `npm install`
 <br/>
 # 4. 사용 라이브러리
-Axios , react-router-dom , tailwind
+
+```
+Axios, react-router-dom, tailwind
+```
